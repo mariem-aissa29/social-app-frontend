@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Social App</h2>
+  
+    <!-- Formulaire pour créer un post -->
+    <div class="mb-3">
+      <textarea
+        class="form-control"
+        rows="3"
+        [(ngModel)]="newPostContent"
+        placeholder="Écrivez un nouveau post..."
+      ></textarea>
+      <button class="btn btn-primary mt-2" (click)="createPost()">Publier</button>
+    </div>
+  
+    <hr />
+  
+    <!-- Liste des posts -->
+    <div *ngFor="let post of posts" class="card mb-3">
+      <div class="card-body">
+        <p>{{ post.content }}</p>
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-outline-primary btn-sm" (click)="likePost(post._id)">
+            J'aime ({{ post.likes }})
+          </button>
+          <span>{{ post.comments.length }} commentaires</span>
+        </div>
+      </div>
+  
+      <!-- Liste des commentaires -->
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let comment of post.comments" class="list-group-item">
+          {{ comment.content }}
+        </li>
+      </ul>
+  
+      <!-- Ajouter un commentaire -->
+      <div class="card-footer">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="newComment[post._id]"
+          placeholder="Ajouter un commentaire..."
+        />
+        <button class="btn btn-success mt-2" (click)="addComment(post._id)">Commenter</button>
+      </div>
+    </div>
+  </div>
+  
