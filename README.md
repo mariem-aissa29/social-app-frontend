@@ -10,18 +10,18 @@ Ce projet représente la partie frontend de l'application de réseau social, dé
 
 ## Installation
 1. Clonez ce dépôt :
-
+    ```bash
     git clone https://github.com/mariem-aissa29/social-app-frontend.git
     cd social-app-frontend
 
 2. Installez les dépendances :
-
+    ```bash
     npm install
 
 
 ## Exécution
 1. Démarrez l'application Angular :
-
+    ```bash
     ng serve
 
 2. Ouvrez votre navigateur et accédez à :
